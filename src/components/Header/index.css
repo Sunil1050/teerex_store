@@ -1,0 +1,30 @@
+.header {
+    background-color: lightgray;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.App-logo {
+    color:black;
+    font-size:24px;
+    font-family: Roboto;
+}
+.header-products {
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    margin-right: 18px;
+    font-family: Roboto;
+    margin-top:4px;
+}
+.cart-button {
+    background-color: gray;
+    border-width: 0px;
+    border-radius:4px;
+    margin-bottom: 8px;
+    color:white;
+}
+.cart-items {
+    margin-bottom:10px;
+    margin-left:2px;
+}

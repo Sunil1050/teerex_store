@@ -1,0 +1,17 @@
+.filter-name {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Roboto;
+    color:black
+}
+.filter-checkbox {
+    color:gray;
+    width:12px;
+    height:12px;
+    margin-right: 4px;
+}
+.filter-label {
+    color: black;
+    font-weight: bold;
+    font-size:14px;
+}

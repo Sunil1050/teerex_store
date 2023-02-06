@@ -1,0 +1,37 @@
+.search-input {
+    outline: none;
+    color: gray;
+    font-size: 14px;
+    border-bottom: 2px solid gray;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    height: 36px;
+    width: 400px;
+    padding: 10px;
+}
+
+.search-button {
+    border-width: 0px;
+    background-color: gray;
+    color: #fff;
+    width: 38px;
+    height: 32px;
+    margin-left: 6px;
+    border-radius: 6px;
+}
+
+.products-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* @media screen and (max-width:576px) {
+    .products-display {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+} */

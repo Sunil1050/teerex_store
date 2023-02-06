@@ -1,0 +1,12 @@
+.price {
+    font-weight:bold;
+    font-size:24px;
+    color:black;
+}
+.add-cart-button {
+    background-color: gray;
+    color:white;
+    width:126px;
+    height:36px;
+    border-width:0px;
+}

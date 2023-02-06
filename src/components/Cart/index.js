@@ -7,14 +7,18 @@ const Cart = () => {
 
     const onIncrementCartProducts = (cartProductId, quantity) => {
         const updatedCartList = cartList.map(eachCartItem => {
-            if (cartProductId === eachCartItem.id && eachCartItem.userQuantity < quantity) {
-                const updatedQuantity = eachCartItem.userQuantity + 1
-                return { ...eachCartItem, userQuantity: updatedQuantity }
+            if (cartProductId === eachCartItem.id) {
+                if (eachCartItem.userQuantity >= quantity) {
+                    return eachCartItem;
+                }
+                const updatedQuantity = eachCartItem.userQuantity + 1;
+                return { ...eachCartItem, userQuantity: updatedQuantity };
             }
-            return { ...eachCartItem, userQuantity: quantity }
-        })
-        dispatch(incrementCartProducts(updatedCartList))
-    }
+            return eachCartItem;
+        });
+        dispatch(incrementCartProducts(updatedCartList));
+    };
+    
 
     const onDecrementCartProducts = (cartProductId) => {
         const updatedCartList = cartList.map(eachCartItem => {

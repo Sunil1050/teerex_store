@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { changeColor, changeGender, changePrice, changeType } from "../../redux/products/productsSlice"
 import { colors, gender, prices, types } from "../../constants/filterConstants"
 import "./index.css"
 
 const Sidebar = () => {
-    const filterList = useSelector((state) => state.allProducts.filterList)
     const dispatch = useDispatch();
 
     const onChangeColor = (event) => {

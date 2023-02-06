@@ -2,7 +2,6 @@ import { useSelector } from "react-redux"
 import "./index.css"
 
 const ProductDetail = ({ eachProduct, onAddToCart }) => {
-    // const userQuantity = useSelector((state) => state.allProducts.userQuantity)
     const userQuantity = 1;
     const { imageURL, name, price, id } = eachProduct
 

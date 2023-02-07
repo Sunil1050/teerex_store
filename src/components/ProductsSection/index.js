@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { GoSearch } from "react-icons/go";
-import { fetchAsyncProducts, getSearchTerm, getCartList } from "../../redux/products/productsSlice"
+import { fetchAsyncProducts, getSearchTerm, getCartList, changeColor, changeGender, changePrice, changeType } from "../../redux/products/productsSlice"
 import './index.css'
 import ProductDetail from "../ProductDetail";
 
@@ -43,6 +43,11 @@ const ProductsSection = () => {
 
     useEffect(() => {
         dispatch(fetchAsyncProducts())
+        dispatch(getSearchTerm(""))
+        dispatch(changeColor(""))
+        dispatch(changeGender(""))
+        dispatch(changePrice(""))
+        dispatch(changeType(""))
     }, [dispatch])
 
     const filteredProducts = products.filter(item => {

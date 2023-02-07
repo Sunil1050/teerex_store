@@ -13,7 +13,7 @@ export const colors = [
     }
 ];
 
-export const gender = [
+export const genderList = [
     {
         id: "Men",
         gender: "Men"
@@ -26,15 +26,15 @@ export const gender = [
 
 export const prices = [
     {
-        id: "0-250",
+        id: "0-Rs250",
         price: "0-Rs250"
     },
     {
-        id: "251-450",
+        id: "Rs251-450",
         price: "Rs251-450"
     },
     {
-        id: "450",
+        id: "Rs450",
         price: "Rs450"
     }
 ];

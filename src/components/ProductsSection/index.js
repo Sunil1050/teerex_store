@@ -85,10 +85,4 @@ const ProductsSection = () => {
     )
 }
 
-const priceRange = (range, price) => {
-    const a = range.split("-").map(item => parseInt(item))
-    console.log('Range: ', a)
-    console.log('Price range: ', price > a[0] && price < a[1])
-    return price > a[0] && price < a[1]
-}
 export default ProductsSection;

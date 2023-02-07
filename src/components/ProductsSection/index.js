@@ -45,8 +45,17 @@ const ProductsSection = () => {
         dispatch(fetchAsyncProducts())
     }, [dispatch])
 
-
     const filteredProducts = products.filter(item => {
+        let match = false;
+        if (price === '') {
+            match = true;
+        } else if (price[0] === 0 && price[1] === 250) {
+            match = item.price >= 0 && item.price <= 250;
+        } else if (price[0] === 251 && price[1] === 450) {
+            match = item.price >= 251 && item.price <= 450;
+        } else if (price[0] === 450) {
+            match = item.price >= 450;
+        }
         return (
             (item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 item.color.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -54,9 +63,10 @@ const ProductsSection = () => {
             (color === '' || item.color.toLowerCase().includes(color.toLowerCase())) &&
             (gender === '' || item.gender.toLowerCase() === gender.toLowerCase()) &&
             (type === '' || item.type.toLowerCase().includes(type.toLowerCase())) &&
-            (price === '' || (item.price >= price[0] && item.price <= price[1]))
-        )
-    })
+            match
+        );
+    });
+
 
     return (
         <div>

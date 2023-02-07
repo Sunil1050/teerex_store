@@ -1,9 +1,10 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BsPlusSquare, BsDashSquare } from 'react-icons/bs'
+import { AiFillCloseCircle } from 'react-icons/ai'
 import "./index.css"
 
 const CartItem = ({ cartProduct, onIncrementCartProducts, onDecrementCartProducts, onDeleteCartProduct }) => {
-    // const cartList = useSelector((state) => state.allProducts.cartList);
     const { imageURL, name, price, quantity, id, userQuantity } = cartProduct
     const onIncrement = () => {
         if (userQuantity !== quantity) {
@@ -13,7 +14,6 @@ const CartItem = ({ cartProduct, onIncrementCartProducts, onDecrementCartProduct
             toast.error('Max. items limit exceeded !', {
                 position: toast.POSITION.TOP_RIGHT
             });
-            // toast("Max. items limit exceeded");
         }
     }
 
@@ -26,24 +26,52 @@ const CartItem = ({ cartProduct, onIncrementCartProducts, onDecrementCartProduct
     }
 
     return (
-        <div className="d-flex flex-row justify-content-around align-items-center shadow cart-item">
-            <img src={imageURL} alt={name} className="product-img" />
-            <div className="text-center">
-                <h4>{name}</h4>
-                <h5>{userQuantity * price}</h5>
+        <div className="cart-item">
+            <img className="cart-product-image" src={imageURL} alt={name} />
+            <div className="cart-item-details-container">
+                <div className="cart-product-title-brand-container">
+                    <p className="cart-product-title">{name}</p>
+                    <p className="cart-product-brand">{userQuantity * price}</p>
+                </div>
+                <div className="cart-quantity-container">
+                    <button
+                        type="button"
+                        className="quantity-controller-button"
+                        onClick={onDecrement}
+                    >
+                        <BsDashSquare color="#52606D" size={16} />
+                    </button>
+                    <p className="cart-quantity">{userQuantity}</p>
+                    <button
+                        type="button"
+                        className="quantity-controller-button"
+                        onClick={onIncrement}
+                    >
+                        <BsPlusSquare color="#52606D" size={16} />
+                    </button>
+                    <ToastContainer
+                        autoClose={3000}
+                        hideProgressBar={true}
+                    />
+                </div>
+                <div className="total-price-remove-container">
+                    <p className="cart-total-price">Rs {price}/-</p>
+                    <button
+                        className="remove-button"
+                        type="button"
+                        onClick={onDelete}
+                    >
+                        Remove
+                    </button>
+                </div>
             </div>
-            <div className="d-flex">
-                <button className="quantity-button" onClick={onDecrement}>
-                    -
-                </button>
-                <h5 className="ml-3 mr-3">{userQuantity}</h5>
-                <button className="quantity-button" onClick={onIncrement}>+</button>
-                <ToastContainer
-                    autoClose={3000}
-                    hideProgressBar={true}
-                />
-            </div>
-            <button className="btn btn-outline-secondary" onClick={onDelete}>Delete</button>
+            <button
+                className="delete-button"
+                type="button"
+                onClick={onDelete}
+            >
+                <AiFillCloseCircle color="#616E7C" size={20} />
+            </button>
         </div>
     )
 }

@@ -1,0 +1,17 @@
+.order-total-value {
+    font-family: Roboto;
+    color:gray;
+    font-size:20px;
+}
+.order-total-label {
+    font-family: Roboto;
+    margin-left: 10px;
+    color:black;
+    font-size:28px;
+    font-weight: bold;
+}
+.total-items {
+    color:gray;
+    font-size: 18px;
+    font-family: Roboto;
+}

@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { incrementCartProducts, decrementCartProducts, deleteCartProduct } from "../../redux/products/productsSlice"
 import CartItem from "../CartItem";
+import CartSummary from "../CartSummary";
+
 const Cart = () => {
     const dispatch = useDispatch();
     const cartList = useSelector((state) => state.allProducts.cartList)
-
+    console.log("Cartlist: ", cartList);
     const onIncrementCartProducts = (cartProductId, quantity) => {
         const updatedCartList = cartList.map(eachCartItem => {
             if (cartProductId === eachCartItem.id) {
@@ -46,6 +48,8 @@ const Cart = () => {
                     return <CartItem key={item.id} cartProduct={item} onIncrementCartProducts={onIncrementCartProducts} onDecrementCartProducts={onDecrementCartProducts} onDeleteCartProduct={onDeleteCartProduct} />
                 })}
             </div>
+            <hr />
+            <CartSummary />
         </div>
     )
 }
